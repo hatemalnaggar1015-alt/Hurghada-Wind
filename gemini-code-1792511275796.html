@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلات الغردقة - سنوركلينج وغطس | Hurghada Sea Trips</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+        body { font-family: 'Cairo', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+    <nav class="bg-slate-800/80 backdrop-blur border-b border-slate-700 sticky top-0 z-50 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-cyan-400"><i class="fa-solid fa-water-ladder ml-2"></i>رحلات الغردقة للغوص والسنوركلينج</h1>
+            <a href="https://wa.me/201118174744" target="_blank" class="bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-lg font-bold transition flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> احجز واتساب
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative py-20 px-4 text-center bg-gradient-to-b from-cyan-900/40 to-slate-900">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-4">استكشف جمال البحر الأحمر في الغردقة</h2>
+        <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">أفضل رحلات الغوص والسنوركلينج، رحلات الجزر، واليخوت الخاصة بأفضل الأسعار وأعلى مستويات الأمان.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#booking" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-6 py-3 rounded-xl transition">احسب تكلفة رحلتك</a>
+            <a href="tel:01118174744" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-6 py-3 rounded-xl border border-slate-600 transition"><i class="fa-solid fa-phone ml-2"></i> اتصل بنا</a>
+        </div>
+    </header>
+
+    <section id="booking" class="container mx-auto px-4 py-12">
+        <div class="max-w-xl mx-auto bg-slate-800 border border-slate-700 p-6 rounded-2xl shadow-xl">
+            <h3 class="text-2xl font-bold text-cyan-400 mb-6 text-center">حاسبة الحجز والتكلفة</h3>
+            <div class="space-y-4">
+                <div>
+                    <label class="block text-sm font-semibold mb-1">اختر الرحلة:</label>
+                    <select id="tripType" class="w-full bg-slate-900 border border-slate-700 p-3 rounded-xl text-white">
+                        <option value="1200">رحلة سنوركلينج لجزيرة الجفتون (1200 ج.م)</option>
+                        <option value="2500">رحلة غطس للمبتدئين غطستين (2500 ج.م)</option>
+                        <option value="3500">رحلة يخت خاص بالكامل (3500 ج.م)</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">عدد البالغين:</label>
+                        <input type="number" id="adults" value="1" min="1" class="w-full bg-slate-900 border border-slate-700 p-3 rounded-xl text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">اسم الفندق / المنطقة:</label>
+                        <input type="text" id="hotel" placeholder="مثال: الممشى / القرى" class="w-full bg-slate-900 border border-slate-700 p-3 rounded-xl text-white">
+                    </div>
+                </div>
+                <button onclick="sendToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition mt-4 flex justify-center items-center gap-2 text-lg">
+                    <i class="fa-brands fa-whatsapp"></i> تأكيد الحجز عبر الواتساب
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 px-4 text-center text-slate-400">
+        <p class="mb-2">تواصل معنا مباشرة:</p>
+        <p class="font-bold text-slate-200">هاتف / واتساب: 01118174744</p>
+        <p class="text-sm mt-1">البريد الإلكتروني: Hatemalnaggar1015@gmail.com</p>
+        <p class="text-xs text-slate-500 mt-4">جميع الحقوق محفوظة © رحلات الغردقة البحرية</p>
+    </footer>
+
+    <script>
+        function sendToWhatsApp() {
+            const trip = document.getElementById('tripType');
+            const tripName = trip.options[trip.selectedIndex].text;
+            const price = parseInt(trip.value);
+            const adults = parseInt(document.getElementById('adults').value) || 1;
+            const hotel = document.getElementById('hotel').value || 'غير محدد';
+            const total = price * adults;
+
+            const msg = `مرحباً، أود حجز رحلة:%0A- الرحلة: ${tripName}%0A- عدد الأفراد: ${adults}%0A- الفندق/المنطقة: ${hotel}%0A- الإجمالي التقريبي: ${total} ج.م`;
+            window.open(`https://wa.me/201118174744?text=${msg}`, '_blank');
+        }
+    </script>
+</body>
+</html>
