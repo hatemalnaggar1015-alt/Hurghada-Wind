@@ -14,54 +14,281 @@
 <body class="bg-slate-950 text-slate-100 min-h-screen">
 
     <!-- Navigation Header -->
-    <nav class="bg-slate-900/90 backdrop-blur border-b border-slate-800 sticky top-0 z-50 p-4">
+    <nav class="bg-slate-900 border-b border-slate-800 sticky top-0 z-50 p-4 shadow-xl">
         <div class="container mx-auto flex flex-wrap justify-between items-center gap-4">
-            <a href="#home" class="text-xl md:text-2xl font-black text-cyan-400 flex items-center gap-2 tracking-wide">
+            <a href="#home" class="text-xl md:text-2xl font-black text-cyan-400 flex items-center gap-2">
                 <i class="fa-solid fa-wind text-cyan-300"></i> Hurghada Wind
             </a>
             
-            <div class="flex items-center gap-4">
-                <div class="hidden md:flex gap-6 font-bold text-sm">
-                    <a href="#home" class="hover:text-cyan-400 transition">Home / الرئيسية</a>
-                    <a href="#gallery" class="hover:text-cyan-400 transition">Islands & Media / الجزر والتصوير</a>
-                    <a href="#booking" class="text-cyan-400 hover:underline">Book Now / الحجز</a>
-                </div>
+            <div class="flex items-center gap-3 md:gap-6">
+                <a href="#gallery" class="text-xs md:text-sm font-bold text-slate-300 hover:text-cyan-400 transition">Islands & Media</a>
+                <a href="#booking" class="text-xs md:text-sm font-bold text-cyan-400 hover:underline">Booking Calculator</a>
 
                 <!-- Language Selector -->
-                <select id="langSelect" onchange="changeLanguage()" class="bg-slate-800 border border-slate-700 text-cyan-300 text-sm font-bold p-2 rounded-xl outline-none">
-                    <option value="de">🇩🇪 Deutsch</option>
-                    <option value="en" selected>🇬🇧 English</option>
-                    <option value="ru">🇷🇺 Русский</option>
-                    <option value="sk">🇸🇰 Slovenčina</option>
+                <select id="langSelect" onchange="changeLanguage()" class="bg-slate-800 border border-slate-700 text-cyan-300 text-xs md:text-sm font-bold p-2 rounded-xl outline-none">
+                    <option value="de">🇩🇪 DE</option>
+                    <option value="en" selected>🇬🇧 EN</option>
+                    <option value="ru">🇷🇺 RU</option>
+                    <option value="sk">🇸🇰 SK</option>
                 </select>
 
-                <a href="#booking" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black px-4 py-2 rounded-xl text-sm transition shadow-lg shadow-cyan-500/20">
-                    Book Trip
+                <a href="#booking" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black px-3 py-2 rounded-xl text-xs md:text-sm transition">
+                    Book Now
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- SECTION 1: HOME PAGE HERO -->
-    <section id="home" class="relative py-28 px-4 text-center bg-cover bg-center" style="background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.75), rgba(3, 7, 18, 0.95)), url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1920&q=80');">
+    <!-- SECTION 1: HOME HERO -->
+    <section id="home" class="relative py-20 px-4 text-center bg-slate-900 border-b border-slate-800">
         <div class="container mx-auto max-w-4xl">
-            <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-sm font-bold px-4 py-1.5 rounded-full inline-block mb-4" id="heroBadge">✨ Welcome to Hurghada Wind Excursions</span>
-            <h1 class="text-4xl md:text-6xl font-black text-white mb-6 leading-tight" id="heroTitle">Feel the Breeze, Dive the Deep – Unforgettable Red Sea Adventures!</h1>
-            <p class="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-8" id="heroDesc">Your Premium Gateway to Crystal Waters, VIP Islands, Speedboats with Fresh Fruits & Professional Underwater Media in Hurghada.</p>
+            <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 text-xs md:text-sm font-bold px-4 py-1.5 rounded-full inline-block mb-4" id="heroBadge">✨ Welcome to Hurghada Wind</span>
+            <h1 class="text-3xl md:text-6xl font-black text-white mb-6 leading-tight" id="heroTitle">Feel the Breeze, Dive the Deep – Unforgettable Red Sea Adventures!</h1>
+            <p class="text-base md:text-xl text-slate-300 max-w-2xl mx-auto mb-8" id="heroDesc">VIP Islands, Diving, Private Speedboats with Fresh Fruits & Professional Underwater Media in Hurghada.</p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#booking" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black px-8 py-4 rounded-xl text-lg transition shadow-lg shadow-cyan-500/20" id="heroCalcBtn">Explore & Calculate Trip</a>
-                <a href="https://wa.me/201118174744" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-8 py-4 rounded-xl border border-slate-700 text-lg transition flex items-center gap-2"><i class="fa-brands fa-whatsapp"></i> Direct WhatsApp Booking</a>
+                <a href="#booking" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-black px-8 py-4 rounded-xl text-base md:text-lg transition shadow-lg shadow-cyan-500/20" id="heroCalcBtn">Calculate Trip & Book</a>
+                <a href="https://wa.me/201118174744" target="_blank" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-8 py-4 rounded-xl border border-slate-700 text-base md:text-lg transition flex items-center gap-2"><i class="fa-brands fa-whatsapp"></i> WhatsApp Booking</a>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 2: MEDIA GALLERY -->
-    <section id="gallery" class="py-20 bg-slate-900 border-y border-slate-800">
+    <!-- SECTION 2: GALLERY -->
+    <section id="gallery" class="py-16 bg-slate-950 border-b border-slate-800">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-black text-center text-cyan-400 mb-3" id="mediaTitle">Tropical Paradise & Professional Underwater Media</h2>
-            <p class="text-slate-400 text-center text-sm mb-12" id="mediaSub">Capture your ultimate memories with Hurghada Wind professional photography & 4K video team</p>
+            <h2 class="text-2xl md:text-4xl font-black text-center text-cyan-400 mb-2" id="mediaTitle">Tropical Paradise & Professional Media</h2>
+            <p class="text-slate-400 text-center text-xs md:text-sm mb-10" id="mediaSub">High-quality Red Sea excursions and underwater photography</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div class="group relative rounded-2xl overflow-hidden border border-slate-800 shadow-xl">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" alt="Islands" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 p-3">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&auto=format&fit=crop" alt="Islands" class="w-full h-48 object-cover rounded-xl mb-3">
+                    <h3 class="text-lg font-bold text-white text-center">White Sand & VIP Islands</h3>
+                </div>
+
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 p-3">
+                    <img src="https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=700&auto=format&fit=crop" alt="Speedboat" class="w-full h-48 object-cover rounded-xl mb-3">
+                    <h3 class="text-lg font-bold text-white text-center">Private Speedboat & Fresh Fruits</h3>
+                </div>
+
+                <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 p-3">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=700&auto=format&fit=crop" alt="Diving Photo" class="w-full h-48 object-cover rounded-xl mb-3">
+                    <h3 class="text-lg font-bold text-white text-center">4K Underwater Photo Packages</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: BOOKING CALCULATOR & PREVIEW -->
+    <section id="booking" class="container mx-auto px-4 py-16">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-5xl font-black text-cyan-400 mb-2" id="bookingTitle">Hurghada Wind Trip Calculator</h2>
+            <p class="text-slate-400 text-xs md:text-sm" id="bookingSub">Select your excursion, currency & preview your package</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto">
+            
+            <!-- Calculator -->
+            <div class="lg:col-span-7 bg-slate-900 border border-slate-800 p-6 rounded-3xl shadow-2xl">
+                <div class="space-y-5">
+                    <div>
+                        <label class="block text-xs font-bold mb-2 text-cyan-300"><i class="fa-solid fa-coins mr-1"></i> Choose Preferred Currency / اختر العملة:</label>
+                        <select id="currency" onchange="calculateTotal()" class="w-full bg-slate-950 border border-slate-700 p-3 rounded-xl text-white font-bold focus:border-cyan-500 outline-none text-sm">
+                            <option value="EUR" selected>EUR (€) - Euro</option>
+                            <option value="USD">USD ($) - US Dollar</option>
+                            <option value="GBP">GBP (£) - British Pound</option>
+                            <option value="EGP">EGP (ج.م) - Egyptian Pound</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold mb-2 text-slate-200" id="lblTrip">Select Excursion / اختر الرحلة البحرية:</label>
+                        <select id="tripType" onchange="updatePreview(); calculateTotal();" class="w-full bg-slate-950 border border-slate-800 p-3 rounded-xl text-white focus:border-cyan-500 outline-none font-bold text-cyan-400 text-sm">
+                            <option value="snorkel">Snorkeling Trip + Island + Buffet Lunch (20€ / 25$)</option>
+                            <option value="diving">Introductory Diving - 2 Dives + Buffet Lunch (40€ / 45$)</option>
+                            <option value="speedboat">Private Speedboat Snorkeling & Islands + Fresh Fruits (130€ / 145$)</option>
+                            <option value="vip_boat">Big Private VIP Yacht + Full Lunch (500€ / 550$)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold mb-2 text-slate-200" id="lblIsland">Choose Island Destination / اختر الجزيرة:</label>
+                        <select id="island" onchange="updatePreview(); calculateTotal();" class="w-full bg-slate-950 border border-slate-800 p-3 rounded-xl text-white focus:border-cyan-500 outline-none text-sm">
+                            <option value="white_sand">White Sand Island (الجزيرة البيضاء)</option>
+                            <option value="hola">Hola Hola Island</option>
+                            <option value="orange">Orange Bay Island (Standard)</option>
+                            <option value="orange_vip">Orange Bay Island VIP Private (+10€)</option>
+                            <option value="eden">Eden Island</option>
+                            <option value="magawish">Magawish Island</option>
+                        </select>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold mb-2 text-slate-200" id="lblGuests">Number of Persons:</label>
+                            <input type="number" id="guests" value="1" min="1" onchange="calculateTotal()" onkeyup="calculateTotal()" class="w-full bg-slate-950 border border-slate-800 p-3 rounded-xl text-white focus:border-cyan-500 outline-none text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold mb-2 text-slate-200" id="lblHotel">Hotel Name / Room Number:</label>
+                            <input type="text" id="hotel" placeholder="e.g. Steigenberger / Albatros" class="w-full bg-slate-950 border border-slate-800 p-3 rounded-xl text-white focus:border-cyan-500 outline-none text-sm">
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2">
+                        <label class="block text-xs font-bold text-cyan-400 mb-2" id="lblAddons">Extra Services & Photos:</label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="photoSnorkel" onchange="calculateTotal()" class="w-4 h-4 accent-cyan-500">
+                            <span class="text-xs text-slate-300" id="optPhotoS">Snorkeling Photo & Video Package (+40€)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="photoDiving" onchange="calculateTotal()" class="w-4 h-4 accent-cyan-500">
+                            <span class="text-xs text-slate-300" id="optPhotoD">Diving Underwater Photo & Video Package (+50€)</span>
+                        </label>
+                        <label class="flex items-center gap-3 cursor-pointer">
+                            <input type="checkbox" id="transfer" onchange="calculateTotal()" class="w-4 h-4 accent-cyan-500">
+                            <span class="text-xs text-slate-300" id="optTransfer">Hotel Transfer Service (+10€ per person)</span>
+                        </label>
+                    </div>
+
+                    <div class="bg-cyan-950/40 border border-cyan-500/30 p-4 rounded-2xl text-center">
+                        <span class="text-slate-400 text-xs font-bold block mb-1" id="lblTotal">Estimated Total Price:</span>
+                        <span id="totalDisplay" class="text-3xl font-black text-cyan-400">20 EUR</span>
+                    </div>
+
+                    <button onclick="sendToWhatsApp()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-3 rounded-xl transition flex justify-center items-center gap-2 text-base shadow-lg shadow-emerald-600/20">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span id="btnBookWa">Book via WhatsApp Now</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preview -->
+            <div class="lg:col-span-5 bg-slate-900 border border-slate-800 p-6 rounded-3xl shadow-2xl flex flex-col justify-between">
+                <div>
+                    <span class="bg-cyan-950 text-cyan-400 border border-cyan-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">Trip Preview</span>
+                    <h3 class="text-xl font-black text-white mb-4" id="previewTitle">Snorkeling Trip</h3>
+
+                    <div class="space-y-4">
+                        <div>
+                            <span class="text-xs font-bold text-slate-300 mb-1 block"><i class="fa-solid fa-water text-cyan-400"></i> Activity:</span>
+                            <img id="imgActivity" src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&auto=format&fit=crop" alt="Activity" class="w-full h-32 object-cover rounded-xl border border-slate-800">
+                        </div>
+
+                        <div>
+                            <span class="text-xs font-bold text-slate-300 mb-1 block" id="lblFoodPreview"><i class="fa-solid fa-utensils text-cyan-400"></i> Refreshment Included:</span>
+                            <img id="imgLunch" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&auto=format&fit=crop" alt="Food / Fruits" class="w-full h-32 object-cover rounded-xl border border-slate-800">
+                        </div>
+
+                        <div>
+                            <span class="text-xs font-bold text-slate-300 mb-1 block"><i class="fa-solid fa-umbrella-beach text-cyan-400"></i> Island:</span>
+                            <img id="imgIsland" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop" alt="Island" class="w-full h-32 object-cover rounded-xl border border-slate-800">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-8 px-4 text-center text-slate-400">
+        <div class="container mx-auto space-y-2">
+            <p class="text-lg font-black text-cyan-400"><i class="fa-solid fa-wind"></i> Hurghada Wind</p>
+            <p class="text-xs">Phone / WhatsApp: <span class="text-cyan-400 font-bold">+201118174744</span></p>
+            <p class="text-xs text-slate-600">© 2026 Hurghada Wind Excursions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const rates = { EUR: 1, USD: 1.10, GBP: 0.85, EGP: 50 };
+
+        const pricesInEUR = {
+            snorkel: 20,
+            diving: 40,
+            speedboat: 130,
+            vip_boat: 500,
+            island_vip: 10,
+            photoSnorkel: 40,
+            photoDiving: 50,
+            transferPerPerson: 10
+        };
+
+        const previewImages = {
+            snorkel: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&auto=format&fit=crop",
+            diving: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&auto=format&fit=crop",
+            speedboat: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=500&auto=format&fit=crop",
+            vip_boat: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?w=500&auto=format&fit=crop",
+            lunch: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&auto=format&fit=crop",
+            fruits: "https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=500&auto=format&fit=crop",
+            islands: {
+                white_sand: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop",
+                hola: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop",
+                orange: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop",
+                orange_vip: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop",
+                eden: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop",
+                magawish: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=500&auto=format&fit=crop"
+            }
+        };
+
+        const translations = {
+            de: {
+                badge: "✨ Willkommen bei Hurghada Wind",
+                title: "Spüren Sie die Brise, tauchen Sie ein!",
+                desc: "VIP-Inseln, Tauchen, Schnellboote mit Obst & Unterwasserfotos.",
+                mediaTitle: "Tropisches Paradies & Fotos",
+                mediaSub: "Rotes Meer Ausflüge und Unterwasserfotografie",
+                bookingTitle: "Hurghada Wind Rechner",
+                bookingSub: "Wählen Sie Ausflug, Währung & Vorschau",
+                guests: "Anzahl der Personen:",
+                hotel: "Hotelname / Zimmernummer:",
+                bookWa: "Jetzt per WhatsApp buchen"
+            },
+            en: {
+                badge: "✨ Welcome to Hurghada Wind",
+                title: "Feel the Breeze, Dive the Deep – Unforgettable Red Sea Adventures!",
+                desc: "VIP Islands, Diving, Private Speedboats with Fresh Fruits & Professional Underwater Media in Hurghada.",
+                mediaTitle: "Tropical Paradise & Professional Media",
+                mediaSub: "High-quality Red Sea excursions and underwater photography",
+                bookingTitle: "Hurghada Wind Trip Calculator",
+                bookingSub: "Select your excursion, currency & preview your package",
+                guests: "Number of Persons:",
+                hotel: "Hotel Name / Room Number:",
+                bookWa: "Book via WhatsApp Now"
+            },
+            ru: {
+                badge: "✨ Добро пожаловать в Hurghada Wind",
+                title: "Почувствуйте бриз, погрузитесь в глубину!",
+                desc: "VIP-острова, дайвинг, катера со свежими фруктами и подводная съемка.",
+                mediaTitle: "Тропический Рай и Фото",
+                mediaSub: "Морские экскурсии и подводная фотосъемка",
+                bookingTitle: "Hurghada Wind Калькулятор",
+                bookingSub: "Выберите экскурсию, валюту и смотрите фото",
+                guests: "Количество человек:",
+                hotel: "Название отеля / Номер:",
+                bookWa: "Забронировать через WhatsApp"
+            },
+            sk: {
+                badge: "✨ Vitajte v Hurghade Wind",
+                title: "Pocíťte vánok, ponorte sa do hlbín!",
+                desc: "VIP ostrovy, potápanie, rýchločlny s ovocím a podvodné fotky.",
+                mediaTitle: "Tropický Raj a Fotky",
+                mediaSub: "Výlety v Červenom mori a podvodné fotografovanie",
+                bookingTitle: "Hurghada Wind Kalkulačka",
+                bookingSub: "Vyberte si výlet, menu a náhľad",
+                guests: "Počet osôb:",
+                hotel: "Názov hotela / číslo izby:",
+                bookWa: "Rezervovať cez WhatsApp"
+            }
+        };
+
+        function updatePreview() {
+            const trip = document.getElementById('tripType').value;
+            const island = document.getElementById('island').value;
+
+            if (previewImages[trip]) {
+                document.getElementById('imgActivity').src = previewImages[trip];
+            }
+
+            if (trip === 'speedboat') {
+                document.getElementById('imgLunch').src = previewImages.fruits;
+                document.getElementById('lblFoodPreview').innerHTML = '<i class="fa-solid fa-apple-whole text-cyan-400"></i> Fresh Fruits Refreshment:';
+            } else {
+                document.getElementById('imgLunch').src = previewImages.lunch;
+                document.getElementById('lblFoodPreview').innerHTML = '<i class="fa-solid fa-utensils text-cyan-400"></i> Buffet Lunch Included
